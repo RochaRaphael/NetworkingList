@@ -1,0 +1,11 @@
+using NetworkingList.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace NetworkingList.Datacontext
+{
+    public class NatworkingListDatacontext : DbContext
+    {
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Skill> Skills { get; set; }
+    }
+}
