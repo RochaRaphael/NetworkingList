@@ -36,6 +36,26 @@ namespace NetworkingList.Data.Mappings
                 .HasColumnName("Age")
                 .HasColumnType("INTEGER")
                 .HasMaxLength(2);
+
+            builder
+                .HasMany(x => x.Skills)
+                .WithMany(x => x.Contacts)
+                .UsingEntity<Dictionary<string, object>>
+                (
+                    "ContactSkills",
+                    contact => contact
+                        .HasOne<Skill>()
+                        .WithMany()
+                        .HasForeignKey("ContactsId")
+                        .HasConstraintName("FK_ContractSkills_ContractId"),
+                    skill => skill
+                        .HasOne<Contact>()
+                        .WithMany()
+                        .HasForeignKey("SkillId")
+                        .HasConstraintName("FK_ContractSkills_SkillId")
+
+                );
+
         }
     }
 }
