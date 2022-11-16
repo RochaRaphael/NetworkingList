@@ -29,7 +29,7 @@ namespace NetworkingList.Data.Mappings
 
             builder.Property(x => x.Cellphone)
                 .HasColumnName("Cellphone")
-                .HasColumnType("BIGINT")
+                .HasColumnType("VARCHAR")
                 .HasMaxLength(14);
 
             builder.Property(x => x.Age)
