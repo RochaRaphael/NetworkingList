@@ -19,7 +19,13 @@ namespace NetworkingList.Data.Mappings
 
             builder.Property(x => x.SkillName)
             .IsRequired() //Not null
-            .HasColumnName("Name")
+            .HasColumnName("SkillName")
+            .HasColumnType("NVARCHAR")
+            .HasMaxLength(80);
+
+            builder.Property(x => x.YourSkillScore)
+            .IsRequired() //Not null
+            .HasColumnName("YourSkillScore")
             .HasColumnType("NVARCHAR")
             .HasMaxLength(80);
         }

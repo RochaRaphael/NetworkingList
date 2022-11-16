@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NetworkingList.DataContext;
 
@@ -10,9 +11,11 @@ using NetworkingList.DataContext;
 namespace NetworkingList.Migrations
 {
     [DbContext(typeof(NatworkingListDataContext))]
-    partial class NatworkingListDataContextModelSnapshot : ModelSnapshot
+    [Migration("20221116211213_AddedYourScoreSkill")]
+    partial class AddedYourScoreSkill
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
