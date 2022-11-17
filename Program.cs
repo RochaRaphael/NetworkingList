@@ -25,7 +25,7 @@ namespace NetworkingList
 
 
             int option = 1;
-            while (option < 7 && option > 0)
+            while (option < 7 && option >= 0)
             {
                 Console.Clear();
                 Menu();
@@ -37,6 +37,7 @@ namespace NetworkingList
                         break;
 
                     case 2:
+                        DataAccess.UpdateContact();
                         break;
 
                     case 3:
@@ -54,11 +55,18 @@ namespace NetworkingList
                     case 7:
                         break;
 
-                    default:
+                    case 8:
                         Console.Clear();
                         Console.WriteLine("BYE, SEE YOU SOON!");
                         break;
+
+                    default:
+                        Console.WriteLine("Invalid option. enter a number from 1 to 7");
+                        option = 0;
+                        break;
                 }
+                Console.WriteLine("Press any key to continue");
+                Console.ReadKey();
             }
         }
     }
