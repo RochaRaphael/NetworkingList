@@ -32,6 +32,7 @@ namespace NetworkingList
                 switch (option)
                 {
                     case 1:
+                        DataAccess.InsertContact();
                         break;
 
                     case 2:
