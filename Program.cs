@@ -44,6 +44,7 @@ namespace NetworkingList
                         break;
 
                     case 4:
+                        DataAccess.InsertSkill();
                         break;
 
                     case 5:

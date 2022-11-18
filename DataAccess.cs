@@ -16,7 +16,7 @@ namespace NetworkingList
             Console.Write("Enter the age: ");
             int age = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("How many skills do you have?");
+            Console.WriteLine("How many skills do you want add?");
             int countSkill = int.Parse(Console.ReadLine());
             Console.WriteLine();
 
@@ -28,7 +28,7 @@ namespace NetworkingList
             {
                 for (int i = 1; i <= countSkill; i++)
                 {
-                    Console.WriteLine($"Enter the skill name number {i}");
+                    Console.WriteLine($"Enter the skill's name number {i}");
                     skillName = Console.ReadLine();
 
                     var alreadyExists = context.Skills.FirstOrDefault(x => x.SkillName == skillName);
@@ -135,6 +135,39 @@ namespace NetworkingList
             }
         }
 
+        public static void InsertSkill()
+        {
+
+            Console.WriteLine("How many skills do you want add?");
+            int countSkill = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+
+            List<Skill> skills = new List<Skill>();
+            string skillName;
+            int scoreSkill;
+            using (var context = new NatworkingListDataContext())
+            {
+                for (int i = 1; i <= countSkill; i++)
+                {
+                    Console.WriteLine($"Enter the skill's name number {i}");
+                    skillName = Console.ReadLine();
+
+                    var alreadyExists = context.Skills.FirstOrDefault(x => x.SkillName == skillName);
+                    if (alreadyExists != null)
+                    {
+                        Console.WriteLine("The skill has already been registered");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Enter your score from 0 to 10 in this skill");
+                        scoreSkill = int.Parse(Console.ReadLine());
+                        context.Skills.Add((new Skill { SkillName = skillName, YourSkillScore = scoreSkill }));
+                    }
+                }
+                context.SaveChanges();
+            }
+        }
         public static void DeleteSkill()
         {
             Console.WriteLine("Enter the name of the skill you want to delete");
