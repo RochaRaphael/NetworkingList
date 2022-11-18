@@ -118,7 +118,23 @@ namespace NetworkingList
 
         public static void DeleteContact()
         {
+            Console.WriteLine("Enter the name of the contact you want to delete");
+            string contactDelete = Console.ReadLine();
 
+            using (var context = new NatworkingListDataContext())
+            {
+                var alreadyExists = context.Contacts.FirstOrDefault(x => x.Name == contactDelete);
+                if (alreadyExists != null)
+                {
+                    context.Remove(alreadyExists);
+                    Console.WriteLine("Deleted contact");
+                    context.SaveChanges();
+                }
+                else
+                    Console.WriteLine("Contact not registered");
+            }
         }
+
+
     }
 }

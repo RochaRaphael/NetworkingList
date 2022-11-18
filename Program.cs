@@ -40,6 +40,7 @@ namespace NetworkingList
                         break;
 
                     case 3:
+                        DataAccess.DeleteContact();
                         break;
 
                     case 4:
@@ -49,6 +50,7 @@ namespace NetworkingList
                         break;
 
                     case 6:
+
                         break;
 
                     case 7:
