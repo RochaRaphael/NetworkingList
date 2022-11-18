@@ -135,6 +135,23 @@ namespace NetworkingList
             }
         }
 
+        public static void DeleteSkill()
+        {
+            Console.WriteLine("Enter the name of the skill you want to delete");
+            string skillDelete = Console.ReadLine();
 
+            using (var context = new NatworkingListDataContext())
+            {
+                var alreadyExists = context.Skills.FirstOrDefault(x => x.SkillName == skillDelete);
+                if (alreadyExists != null)
+                {
+                    context.Remove(alreadyExists);
+                    Console.WriteLine("Deleted skill");
+                    context.SaveChanges();
+                }
+                else
+                    Console.WriteLine("Skill not registered");
+            }
+        }
     }
 }

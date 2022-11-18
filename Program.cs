@@ -50,7 +50,7 @@ namespace NetworkingList
                         break;
 
                     case 6:
-
+                        DataAccess.DeleteSkill();
                         break;
 
                     case 7:
