@@ -8,7 +8,6 @@ namespace NetworkingList
     {
         static void Main(string[] args)
         {
-
             void Menu()
             {
                 Console.WriteLine("CHOSE AN OPTION - PUT A NUMBER");
@@ -22,7 +21,6 @@ namespace NetworkingList
                 Console.WriteLine("7- Search");
                 Console.WriteLine("8- Close the program");
             }
-
 
             int option = 1;
             while (option < 7 && option >= 0)

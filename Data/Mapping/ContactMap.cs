@@ -46,13 +46,13 @@ namespace NetworkingList.Data.Mappings
                     contact => contact
                         .HasOne<Skill>()
                         .WithMany()
-                        .HasForeignKey("ContactsId")
-                        .HasConstraintName("FK_ContractSkills_ContractId"),
+                        .HasForeignKey("SkillId")
+                        .HasConstraintName("FK_ContractSkills_SkillId"),
                     skill => skill
                         .HasOne<Contact>()
                         .WithMany()
-                        .HasForeignKey("SkillId")
-                        .HasConstraintName("FK_ContractSkills_SkillId")
+                        .HasForeignKey("ContactId")
+                        .HasConstraintName("FK_ContractSkills_ContactId")
 
                 );
 
