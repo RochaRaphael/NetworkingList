@@ -16,7 +16,7 @@ namespace NetworkingList
                 Console.WriteLine("2- Update contact");
                 Console.WriteLine("3- Delete contact");
                 Console.WriteLine("4- Insert skill");
-                Console.WriteLine("5- Updae skill");
+                Console.WriteLine("5- Update skill");
                 Console.WriteLine("6- Delete skill");
                 Console.WriteLine("7- Search");
                 Console.WriteLine("8- Close the program");
@@ -48,6 +48,7 @@ namespace NetworkingList
                         break;
 
                     case 5:
+                        DataAccess.UpdateSkill();
                         break;
 
                     case 6:

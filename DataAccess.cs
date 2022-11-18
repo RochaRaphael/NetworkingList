@@ -168,6 +168,34 @@ namespace NetworkingList
                 context.SaveChanges();
             }
         }
+
+        public static void UpdateSkill()
+        {
+            using (var context = new NatworkingListDataContext())
+            {
+                Console.WriteLine("Enter the skill's name you want to update");
+                string name = Console.ReadLine();
+
+                var skill = context.Skills.FirstOrDefault(x => x.SkillName == name);
+                if (skill != null)
+                {
+                    Console.WriteLine("Enter the new skill's upgrade");
+                    string newName = Console.ReadLine();
+
+                    Console.WriteLine("Enter the new skill' score upgrade");
+                    int newScore = int.Parse(Console.ReadLine());
+
+                    skill.SkillName = newName;
+                    skill.YourSkillScore = newScore;
+                }
+                else
+                {
+                    Console.WriteLine("Skill not registered");
+                }
+                context.Update(skill);
+                context.SaveChanges();
+            }
+        }
         public static void DeleteSkill()
         {
             Console.WriteLine("Enter the name of the skill you want to delete");
