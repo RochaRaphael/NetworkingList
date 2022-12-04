@@ -56,4 +56,4 @@ Para que, possamos executar o `Entity Framework` no projeto, se faz necessário 
 ```
 
 # Tenho Dúvidas... O que Faço?! ❓
-Caso tenham dúvidas aos códigos desenvolvidos aqui, sintam-se a vontade em abrir uma [ISSUE AQUI](https://github.com/RochaRaphael/HospitalWarehouse/issues). Assim que possível, estarei respondendo as todas as dúvidas que tiverem!
+Caso tenham dúvidas aos códigos desenvolvidos aqui, sintam-se a vontade em abrir uma [ISSUE AQUI](https://github.com/RochaRaphael/NetworkingList/issues). Assim que possível, estarei respondendo as todas as dúvidas que tiverem!
